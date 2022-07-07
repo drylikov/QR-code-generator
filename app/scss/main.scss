@@ -1,0 +1,162 @@
+@import "normalize.scss";
+@import "fonts";
+
+$tablet: 1199px;
+$mobile: 767px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+
+  position: relative;
+
+  overflow-x: hidden;
+
+  background: #edeef0;
+  color: #000000;
+}
+
+.container {
+  width: 100%;
+  max-width: 1150px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &--narrow {
+    max-width: 790px;
+  }
+}
+
+.main {
+  padding: 52px 0;
+
+  &--qr {
+    padding-bottom: 103px;
+  }
+}
+
+.header {
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  background: #333333;
+  box-shadow: inset 0px -1px 0px #4872a3;
+
+  .container {
+    max-width: 1188px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+
+  text-decoration: none;
+  letter-spacing: 0.326451px;
+
+  color: #ffffff;
+
+  &::before {
+    display: block;
+
+    width: 17px;
+    height: 18px;
+    margin-right: 10px;
+
+    content: "";
+
+    background: url("../images/dist/logo.svg") no-repeat center;
+  }
+
+  &--gr {
+    &::before {
+      width: 20px;
+      height: 18px;
+
+      background-image: url("../images/dist/icons/qr.svg");
+    }
+  }
+}
+
+.btn {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 16px;
+
+  text-align: center;
+  letter-spacing: -0.154px;
+  transition: all 0.2s linear;
+  cursor: pointer;
+
+  background: #1d67ab;
+  border: 1px solid #1d67ab;
+  border-radius: 4px;
+  color: #ffffff;
+
+  &:hover {
+    color: #55677d;
+    background: #f5f5f5;
+    border-color: #f5f5f5;
+  }
+
+  &--outline {
+    border-color: #1d67ab;
+    background: transparent;
+    color: #1d67ab;
+
+    &:hover {
+      background: #1d67ab;
+      border-color: #1d67ab;
+      color: #ffffff;
+    }
+  }
+}
+
+div.jGrowl div.success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+@media (max-width: $mobile) {
+  .main {
+    padding: 26px 0;
+  }
+
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@import "blocks/form";
+@import "blocks/qr";

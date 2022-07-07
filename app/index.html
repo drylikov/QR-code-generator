@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./css/include/nice-select.css">
+  <link rel="stylesheet" href="./css/include/jquery.jgrowl.min.css">
+  <link rel="stylesheet" href="./css/app.min.css">
+  <title>QR code generator</title>
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="/" class="logo logo--gr">QR code generator</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="main main--qr">
+    <div class="container container--narrow">
+      <div class="qr">
+        <section class="qr-intro">
+          <h1 class="qr__title">Генератор QR-кодов</h1>
+          <form action="./qr.html" class="qr__form" id="qr_form">
+            <div class="form-line qr-line">
+              <div class="form-item">
+                <input type="url" class="form-input qr__search" id="qr_url" name="qr_url"
+                  placeholder="Введите ссылку для кодирования" required>
+              </div>
+            </div>
+            <div class="qr__wrapper">
+              <select name="qr_size" id="qr_size" class="form-select qr-select">
+                <option value="100x100">100x100 px</option>
+                <option value="150x150">150x150 px</option>
+                <option value="200x200">200x200 px</option>
+                <option value="220x220">220x220 px</option>
+                <option value="250x250" selected>250x250 px</option>
+                <option value="290x290">290x290 px</option>
+                <option value="300x300">300x300 px</option>
+              </select>
+              <div class="qr__inner">
+                <div class="qr-short">
+                  <label for="qr_switch" class="form-switch">
+                    <input class="form-switch__checkbox" type="checkbox" id="qr_switch" name="qr_switch" checked>
+                    <span class="form-switch__round"></span>
+                  </label>
+                  <span class="qr-short__label">Сократить ссылку</span>
+                </div>
+                <button type="submit" class="btn qr__submit">Создать код</button>
+              </div>
+            </div>
+          </form>
+          <div class="qr__info">
+            <div class="qr__col">
+              <div class="qr__box">
+                <span class="qr__suptext">Постояная ссылка на изображение</span>
+                <input class="qr__link" id="qr_link" value="httр://qrcoder.ru/code/?QRcoder&4&0" readonly>
+                <button type="button" class="btn btn--outline qr__copy" id="qr_copy">Скопировать ссылку</button>
+              </div>
+
+              <div class="qr__box">
+                <span class="qr__suptext">HTML-код для вставки в блог</span>
+                <code class="qr__code" id="qr_code">
+                  &lt;a href=&quot;http://qrcoder.ru&quot; target=&quot;_blank&quot;&gt; &lt;img
+                      src=&quot;http://qrcoder.ru/code/?QRcoder&amp;4&amp;0&quot; width=&quot;250&quot; height=&quot;250&quot; border=&quot;0&quot; title=&quot;QR код&quot;&gt;&lt;/a&gt;
+                </code>
+              </div>
+
+            </div>
+            <div class="qr__col">
+              <div class="qr__placeholder" id="qrcode">
+                <img class="qr__mask" width="250" height="250" src="images/dist/qr__placeholder.png" alt="qrcode"
+                  title="qrcode" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="qr-content">
+          <h2>Что такое QR-код</h2>
+          <p>QR код «QR - Quick Response - Быстрый Отклик» — это двухмерный штрихкод (бар-код), предоставляющий
+            информацию для быстрого ее распознавания с помощью камеры на мобильном телефоне.</p>
+          <p>При помощи QR-кода можно закодировать любую информацию, например: текст, номер телефона, ссылку на сайт или
+            визитную карточку.</p>
+          <p> &nbsp;</p>
+          <h2>Использование QR-кодов</h2>
+          <ol>
+            <li>Возьмите мобильный телефон с камерой,</li>
+            <li>Запустите программу для сканирования кода,</li>
+            <li>Наведите объектив камеры на код,</li>
+            <li>Получите информацию!</li>
+          </ol>
+          <p> &nbsp;</p>
+          <h2>Применение QR-кодов</h2>
+          <p>В качестве применения qr-кодов можно назвать: размещение их изображений в интернете, нанесение на визитные
+            карточки, футболки, рекламные вывески и многое другое.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/include/jquery.min.js"></script>
+  <script src="./js/include/jquery.validate.min.js"></script>
+  <script src="./js/include/jquery.validate_messages.min.js"></script>
+  <script src="./js/include/jquery.nice-select.min.js"></script>
+  <script src="./js/include/qrcode.min.js"></script>
+  <script src="./js/include/jquery.jgrowl.min.js"></script>
+  <script src="./js/app.min.js"></script>
+
+</body>
+
+</html>
